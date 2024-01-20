@@ -28,8 +28,8 @@
     <h3>Нет заявок</h3>
 @else
 <div class="d-flex" style="gap:20px; margin-left:40px;">
-  <a href="{{ route('getApp', ['sort' => 'asc']) }}">Сперва новые заявки</a>
-  <a href="{{ route('getApp', ['sort' => 'desc']) }}">Сперва старые заявки</a>
+  <a href="{{ route('getApp', ['sort' => 'asc']) }}">Сперва старые заявки</a>
+  <a href="{{ route('getApp', ['sort' => 'desc']) }}">Сперва новые заявки</a>
 </div>
 @foreach ($app as $item)
 <div class="card" style="width: 18rem; margin: 20px 40px">
