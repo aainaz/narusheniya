@@ -19,10 +19,14 @@
     <li class="list-group-item">Отчество:  {{ Auth::user()->patronymic }}</li>
     <li class="list-group-item">почта:  {{ Auth::user()->email }}</li>
     <li class="list-group-item">логин: {{ Auth::user()->login }}</li>
+    <li class="list-group-item">телефон: {{ Auth::user()->telephone }}</li>
   </ul>
 </div> 
  
 <h1> Мои заявки: </h1> 
+@if ($app->isEmpty()) 
+    <h3>Нет заявок</h3>
+@else
 <div class="d-flex" style="gap:20px; margin-left:40px;">
   <a href="{{ route('getApp', ['sort' => 'asc']) }}">Сперва новые заявки</a>
   <a href="{{ route('getApp', ['sort' => 'desc']) }}">Сперва старые заявки</a>
@@ -42,3 +46,4 @@
 </div>  
 @endforeach
 {{ $app->withQueryString()->links('pagination::bootstrap-5') }}
+@endif

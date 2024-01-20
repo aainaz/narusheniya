@@ -38,8 +38,8 @@
             <div class="alert alert-danger" role="alert">{{ $message }}</div>
         @enderror
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Введите телефон</label>
-        <input type="tel" class="form-control" id="exampleInputEmail1" name="telephone">
+        <label for="exampleInputEmail1" class="form-label">Введите телефон +7(xxx)xxx-xx-xx</label>
+        <input type="tel" placeholder="+7 (900) 123-45-67" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" class="form-control" id="exampleInputEmail1" name="telephone">
       </div>
       @error('telephone')
             <div class="alert alert-danger" role="alert">{{ $message }}</div>

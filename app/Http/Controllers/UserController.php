@@ -83,10 +83,12 @@ public function getUserApp(Request $request)
     $sort = $request->query('sort'); 
 
     if ($sort == 'asc') {
-        $app = Application::orderBy('id', 'asc')->paginate(3);
+        $user = auth()->user();
+        $app = Application::orderBy('id', 'asc')->where('author', $user->id)->paginate(3);
     } else {
-        $app = Application::orderBy('id', 'desc')->paginate(3);
+        $user = auth()->user();
+        $app = Application::orderBy('id', 'desc')->where('author', $user->id)->paginate(3);
     }
-    return view("cab", ["app" => $app,"app" => $app,]);
+    return view("cab", ["app" => $app]);
 }
 }
