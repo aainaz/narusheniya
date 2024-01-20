@@ -54,7 +54,7 @@ class UserController extends Controller
         $user_log = $request->only("login","password");
         if(Auth::attempt($user_log)){
             return redirect("/cab");
-}return redirect("/log")->back()->with("error","");
+}return redirect()->back()->with("error","ошибка логина или пароля");
 }
 public function logout(){
     Session::flush();

@@ -1,6 +1,11 @@
 <x-header />
 
 <div class="d-flex container">
+  @if(session("error"))
+  <div id="message" class="message">
+    {{session("error")}}
+  </div>
+  @endif
     <form action="/log" method="POST">
     @csrf
     <div class="mb-3">
